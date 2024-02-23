@@ -1,0 +1,29 @@
+.home-page-container {
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+  }
+  
+  .content {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+  }
+  
+  .footer-container {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+  }
+  
+  /* Custom CSS for responsiveness */
+  @media (max-width: 767px) {
+    .footer-container {
+      position: static;
+    }
+  }
+  
