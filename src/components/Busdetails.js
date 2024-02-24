@@ -31,7 +31,7 @@ function BusDetails() {
     id: id,
     name: 'City Travels',
     duration: '3 hours',
-    price: 1500, // Store price as a number for easier manipulation
+    price: 1500, 
     startTime: '19:00',
     endTime: '22:00',
     ratings: 4.5,

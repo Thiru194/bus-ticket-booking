@@ -1,6 +1,6 @@
 {
-  "homepage": "http://Thiru194.github.io/bus-ticket-booking",
-  "name": "bus-movie-booking",
+  
+  "name": "bus-ticket-booking",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
