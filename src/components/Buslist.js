@@ -13,56 +13,29 @@ const buses = [
     endTime: '22:00',
   },
   {
-    id: 2,
-    name: 'Hindustan Travels',
+    id: 1,
+    name: 'City Travels',
     image: 'https://assets.volvo.com/is/image/VolvoInformationTechnologyAB/1860x1050-volvo-9700-CGI1?qlt=82&wid=1024&ts=1656931444230&dpr=off&fit=constrain',
     duration: '3 hours',
-    price: '₹1050',
+    price: '₹1500',
     startTime: '19:00',
     endTime: '22:00',
   },
   {
-    id: 3,
-    name: 'A1 Travels',
+    id: 1,
+    name: 'City Travels',
     image: 'https://assets.volvo.com/is/image/VolvoInformationTechnologyAB/1860x1050-volvo-9700-CGI1?qlt=82&wid=1024&ts=1656931444230&dpr=off&fit=constrain',
     duration: '3 hours',
-    price: '₹500',
+    price: '₹1500',
     startTime: '19:00',
     endTime: '22:00',
   },
   {
-    id: 3,
-    name: 'A1 Travels',
+    id: 1,
+    name: 'City Travels',
     image: 'https://assets.volvo.com/is/image/VolvoInformationTechnologyAB/1860x1050-volvo-9700-CGI1?qlt=82&wid=1024&ts=1656931444230&dpr=off&fit=constrain',
     duration: '3 hours',
-    price: '₹500',
-    startTime: '19:00',
-    endTime: '22:00',
-  },
-  {
-    id: 3,
-    name: 'A1 Travels',
-    image: 'https://assets.volvo.com/is/image/VolvoInformationTechnologyAB/1860x1050-volvo-9700-CGI1?qlt=82&wid=1024&ts=1656931444230&dpr=off&fit=constrain',
-    duration: '3 hours',
-    price: '₹500',
-    startTime: '19:00',
-    endTime: '22:00',
-  },
-  {
-    id: 3,
-    name: 'A1 Travels',
-    image: 'https://assets.volvo.com/is/image/VolvoInformationTechnologyAB/1860x1050-volvo-9700-CGI1?qlt=82&wid=1024&ts=1656931444230&dpr=off&fit=constrain',
-    duration: '3 hours',
-    price: '₹500',
-    startTime: '19:00',
-    endTime: '22:00',
-  },
-  {
-    id: 3,
-    name: 'A1 Travels',
-    image: 'https://assets.volvo.com/is/image/VolvoInformationTechnologyAB/1860x1050-volvo-9700-CGI1?qlt=82&wid=1024&ts=1656931444230&dpr=off&fit=constrain',
-    duration: '3 hours',
-    price: '₹500',
+    price: '₹1500',
     startTime: '19:00',
     endTime: '22:00',
   },
@@ -71,16 +44,16 @@ const buses = [
 
 const BusList = () => {
   return (
-    <div style={{ backgroundColor: "lightgray", minHeight: "100vh", position: "relative" }}>
+    <div style={{ backgroundColor: "lightgray", minHeight: "100vh", paddingTop: "50px" }}>
       <Container>
-        <h2 style={{ textAlign: 'center', margin: '30px 0' }}>Available Buses</h2>
+        <h2 style={{ textAlign: 'center', marginBottom: '30px' }}>Available Buses</h2>
         <Row xs={1} md={2} lg={3} className="g-4">
           {buses.map(bus => (
             <Col key={bus.id}>
               <Card className="h-100">
                 <Card.Img variant="top" src={bus.image} style={{ height: '300px', objectFit: 'cover' }} />
                 <Card.Body>
-                  <Card.Title>{bus.name}</Card.Title>
+                  <Card.Title className='text-center'>{bus.name}</Card.Title>
                   <Card.Text>{bus.description}</Card.Text>
                   <Card.Text><strong>Duration:</strong> {bus.duration}</Card.Text>
                   <Card.Text><strong>Price:</strong> {bus.price}</Card.Text>
