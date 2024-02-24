@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/bus-ticket-booking/static/css/main.2bd6f769.css",
+    "main.js": "/bus-ticket-booking/static/js/main.9cdf41ce.js",
+    "static/js/453.880480bf.chunk.js": "/bus-ticket-booking/static/js/453.880480bf.chunk.js",
+    "static/media/bus1.jpg": "/bus-ticket-booking/static/media/bus1.eadafaa3bd8e8461f18e.jpg",
+    "static/media/busback_cleanup.jpg": "/bus-ticket-booking/static/media/busback_cleanup.cafe222058e7702b0a30.jpg",
+    "static/media/four.jpg": "/bus-ticket-booking/static/media/four.733b68171a0b4c98b80d.jpg",
+    "static/media/backj2.jpg": "/bus-ticket-booking/static/media/backj2.1c503dc9b0ae8a672c37.jpg",
+    "index.html": "/bus-ticket-booking/index.html",
+    "main.2bd6f769.css.map": "/bus-ticket-booking/static/css/main.2bd6f769.css.map",
+    "main.9cdf41ce.js.map": "/bus-ticket-booking/static/js/main.9cdf41ce.js.map",
+    "453.880480bf.chunk.js.map": "/bus-ticket-booking/static/js/453.880480bf.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2bd6f769.css",
+    "static/js/main.9cdf41ce.js"
+  ]
+}
