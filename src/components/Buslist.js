@@ -39,6 +39,33 @@ const buses = [
     startTime: '19:00',
     endTime: '22:00',
   },
+  {
+    id: 3,
+    name: 'A1 Travels',
+    image: 'https://assets.volvo.com/is/image/VolvoInformationTechnologyAB/1860x1050-volvo-9700-CGI1?qlt=82&wid=1024&ts=1656931444230&dpr=off&fit=constrain',
+    duration: '3 hours',
+    price: '₹500',
+    startTime: '19:00',
+    endTime: '22:00',
+  },
+  {
+    id: 3,
+    name: 'A1 Travels',
+    image: 'https://assets.volvo.com/is/image/VolvoInformationTechnologyAB/1860x1050-volvo-9700-CGI1?qlt=82&wid=1024&ts=1656931444230&dpr=off&fit=constrain',
+    duration: '3 hours',
+    price: '₹500',
+    startTime: '19:00',
+    endTime: '22:00',
+  },
+  {
+    id: 3,
+    name: 'A1 Travels',
+    image: 'https://assets.volvo.com/is/image/VolvoInformationTechnologyAB/1860x1050-volvo-9700-CGI1?qlt=82&wid=1024&ts=1656931444230&dpr=off&fit=constrain',
+    duration: '3 hours',
+    price: '₹500',
+    startTime: '19:00',
+    endTime: '22:00',
+  },
   // Add more bus objects with additional fields as needed
 ];
 

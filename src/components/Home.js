@@ -1,14 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button, Container, Row, Col } from 'react-bootstrap';
-import background from '../assets/backgr.avif';
+import background from '../assets/four.jpg';
 import './Home.css';
 
 const Home = () => {
     return (
         <div className="home-container" style={{ backgroundImage: `url(${background})` }}>
-            <Container>
-                <Row className="justify-content-center align-items-center text-center">
+            <Container >
+                <Row className="justify-content-center align-items-center text-center ">
                     <Col xs={12} md={6}>
                         <div className="content p-4 rounded">
                             <h1 className="mb-4">Welcome to Our Bus  Ticket Booking App</h1>

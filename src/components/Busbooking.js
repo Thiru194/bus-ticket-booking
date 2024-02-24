@@ -127,15 +127,17 @@ function BusTicketBooking() {
                   </Form.Group>
                 </Col>
                 <Col md={4}>
-                  <Form.Group controlId="date">
-                    <Form.Label>Date</Form.Label>
-                    <Form.Control
-                      type="date"
-                      name="date"
-                      value={formData.date}
-                      onChange={handleChange}
-                    />
-                  </Form.Group>
+                <Form.Group controlId="date">
+                 <Form.Label>Date</Form.Label>
+                <Form.Control
+                 type="date"
+                  name="date"
+                 value={formData.date}
+               min={new Date().toISOString().split('T')[0]} 
+               onChange={handleChange}
+  />
+</Form.Group>
+
                 </Col>
               </Row>
               

@@ -43,7 +43,7 @@ function Login() {
       backgroundImage: `url(${backgroun})`,
       backgroundSize: 'cover',
       backgroundPosition: 'center',
-      height:"730px", 
+      minHeight: "100vh", // Set minimum height to fill the viewport
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'center',
@@ -55,10 +55,9 @@ function Login() {
   return (
     <div style={styles.main}>
       <Container>
-        <Row style={{marginTop:"200px"}}></Row>
-        <Row style={{marginLeft:"350px",marginBottom:"200px"}}>
-          <Col xs={12} md={6}>
-            <h2 style={{marginLeft:"170px"}}>Login</h2>
+        <Row>
+          <Col xs={12} md={{ span: 6, offset: 3 }}> {/* Center the form on medium screens */}
+            <h2 className='text-center'>Login</h2>
             <Form onSubmit={handleSubmit}>
               <Form.Group controlId="formBasicEmail">
                 <Form.Label>Email address</Form.Label>
@@ -71,12 +70,13 @@ function Login() {
                 <Form.Control type="password" name="password" placeholder="Password" value={formData.password} onChange={handleChange} />
                 <Form.Text className="text-danger">{errors.password}</Form.Text>
               </Form.Group>
-              
-              <Button variant="primary" type="submit" style={{marginLeft:"170px",marginTop:"10px"}}>
+              <div className='text-center'>
+              <Button variant="primary" type="submit" style={{marginTop:"10px"}}>
                 Login
               </Button>
+              </div>
             </Form>
-            <p style={{marginLeft:"90px"}}>Don't have an account? <Link to="/signup">Sign Up</Link></p>
+            <p className='text-center'>Don't have an account? <Link to="/signup">Sign Up</Link></p>
           </Col>
         </Row>
       </Container>

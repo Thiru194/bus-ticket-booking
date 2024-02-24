@@ -43,10 +43,11 @@ function SignUp() {
       backgroundImage: `url(${backgroun})`,
       backgroundSize: 'cover',
       backgroundPosition: 'center',
-      height:"730px",
+      minHeight: "100vh",
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'center',
+      alignItems: 'center',
       color: 'black', // Example text color
     }
   };
@@ -54,9 +55,9 @@ function SignUp() {
   return (
     <div style={styles.main}>
       <Container>
-        <Row className="justify-content-md-center">
+        <Row className="justify-content-center">
           <Col xs={12} md={6}>
-            <h2 style={{marginLeft:"250px"}}>Sign Up</h2>
+            <h2 className='text-center'>Sign Up</h2>
             <Form onSubmit={handleSubmit}>
               <Form.Group controlId="formBasicEmail">
                 <Form.Label>Email address</Form.Label>
@@ -70,11 +71,13 @@ function SignUp() {
                 <Form.Text className="text-danger">{errors.password}</Form.Text>
               </Form.Group>
               
-              <Button variant="success" type="submit" style={{marginLeft:"250px",marginTop:"10px"}}>
-                Sign Up
-              </Button>
+              <div className="text-center"> {/* Center the button */}
+                <Button variant="success" type="submit" style={{marginTop:"10px"}}>
+                  Sign Up
+                </Button>
+              </div>
             </Form>
-            <p  style={{marginLeft:"190px"}}>Already have an account? <Link to="/login">Login</Link></p>
+            <p className='text-center'>Already have an account? <Link to="/login">Login</Link></p>
           </Col>
         </Row>
       </Container>

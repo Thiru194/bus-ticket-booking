@@ -9,7 +9,7 @@ function BusDetails() {
     id: id,
     name: 'City Travels',
     duration: '3 hours',
-    price: '₹1500',
+    price: 1500, // Store price as a number for easier manipulation
     startTime: '19:00',
     endTime: '22:00',
     ratings: 4.5,
@@ -25,6 +25,8 @@ function BusDetails() {
   ];
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [totalPrice, setTotalPrice] = useState(busDetails.price); // Initialize total price with default price
+  const [selectedSeatType, setSelectedSeatType] = useState('Non-Sleeper');
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -34,9 +36,22 @@ function BusDetails() {
     return () => clearInterval(intervalId);
   }, [busImages.length]);
 
+  
+  const handleSeatTypeChange = (e) => {
+    const { value } = e.target;
+    setSelectedSeatType(value);
+   
+    if (value === 'Sleeper') {
+      
+      setTotalPrice(busDetails.price + 300);
+    } else {
+     
+      setTotalPrice(busDetails.price);
+    }
+  };
 
   return (
-    <div style={{ backgroundColor: "lightgray", minHeight: "100vh", position: "relative" }}>
+    <div style={{ backgroundColor: "white", minHeight: "100vh", position: "relative" }}>
       <header className="py-4" style={{ backgroundColor: "gray" }}>
         <Container>
           <h1 className="text-center">Bus Details</h1>
@@ -46,52 +61,71 @@ function BusDetails() {
         <Container>
           <Row className='mt-4'>
             <Col md={6}>
-              <Card className="mb-4">
+              <Card className="mb-4" style={{backgroundColor:"lightgray"}}>
                 <Card.Body>
-                  <Card.Title className="text-primary">{busDetails.name}</Card.Title>
-                  <Card.Text>
-                    <strong>Bus ID:</strong> {busDetails.id}
-                    <br />
-                    <strong>Duration:</strong> {busDetails.duration}
-                    <br />
-                    <strong>Price:</strong> {busDetails.price}
-                    <br />
-                    <strong>Start Time:</strong> {busDetails.startTime}
-                    <br />
-                    <strong>End Time:</strong> {busDetails.endTime}
-                    <br />
-                    <strong>Ratings:</strong> {busDetails.ratings}
-                    <br />
-                    <strong>Seats Available:</strong> {busDetails.seatsAvailable}
-                    <br />
-                    <strong>Bus Type:</strong> {busDetails.busType}
-                    <br />
+                  <Row>
+                    <Col md={6}>
+                    
+                      <div>
+                        <Card.Title className="text-primary">{busDetails.name}</Card.Title>
+                        <Card.Text>
+                          <p><strong>Bus ID:</strong> {busDetails.id}</p>
+                          <p><strong>Duration:</strong> {busDetails.duration}</p>
+                          <p><strong>Price:</strong> ₹{totalPrice}</p> {/* Display total price dynamically */}
+                          <p><strong>Start Time:</strong> {busDetails.startTime}</p>
+                          <p><strong>End Time:</strong> {busDetails.endTime}</p>
+                        </Card.Text>
+                      </div>
+                    </Col>
+                    <Col md={6} style={{marginTop:"40px"}}>
+                    <p>  <strong>Ratings:</strong> {busDetails.ratings}&#9733;</p>
+            
+            <p> <strong>Seats Available:</strong> {busDetails.seatsAvailable}</p>
+ 
+            <p> <strong>Bus Type:</strong> {busDetails.busType}</p>
+            <Form>
+  <strong>Seat Type:</strong>
+  <Row className="mb-3">
+    <Col>
+      <Form.Check
+        type="radio"
+        id="sleeperRadio"
+        label="Sleeper"
+        value="Sleeper"
+        name="busSleeper"
+        checked={selectedSeatType === 'Sleeper'}
+        onChange={handleSeatTypeChange}
+        className="mb-2"
+        style={{ color: 'black' }} // Change the color of the radio button
+      />
+    </Col>
+    <Col>
+      <Form.Check
+        type="radio"
+        id="semiSleeperRadio"
+        label="Semi-Sleeper"
+        value="Semi-Sleeper"
+        name="busSleeper"
+        checked={selectedSeatType === 'Semi-Sleeper'}
+        onChange={handleSeatTypeChange}
+        className="mb-2"
+        style={{ color: 'black' }} // Change the color of the radio button
+      />
+    </Col>
+  </Row>
+</Form>
 
-                    <Form>
-                      <strong>Seat Type:</strong>
-                      <Row>
-                        <Col>
-                          <Form.Group controlId="formSleeper">
-                            <Form.Check type="radio" label="Sleeper" name="busSleeper" id="sleeperRadio" style={{ backgroundColor: 'rgba(0, 0, 0, 0.1)' }} />
-                          </Form.Group>
-                        </Col>
-                        <Col>
-                          <Form.Group controlId="formSemiSleeper">
-                            <Form.Check type="radio" label="Semi-Sleeper" name="busSleeper" id="semiSleeperRadio" style={{ backgroundColor: 'rgba(0, 0, 0, 0.1)' }} />
-                          </Form.Group>
-                        </Col>
-                      </Row>
-                    </Form>
-                  </Card.Text>
+
+                    </Col>
+                  </Row>
                 </Card.Body>
-
               </Card>
               <Card className="mb-4">
                 <Card.Body>
                   <Row>
                     <Col>
                       <Card.Title>Total Price</Card.Title>
-                      <Card.Text>Total: {busDetails.price}</Card.Text>
+                      <Card.Text>Total: ₹{totalPrice}</Card.Text> 
                     </Col>
                     <Col>
                       <Button variant="primary" style={{ marginLeft: "200px", marginTop: "20px" }}>Pay</Button>
@@ -99,7 +133,6 @@ function BusDetails() {
                   </Row>
                 </Card.Body>
               </Card>
-
             </Col>
             <Col md={6}>
               <div id="carouselExampleSlidesOnly" className="carousel slide" data-bs-ride="carousel">
